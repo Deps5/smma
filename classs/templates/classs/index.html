@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SMMA</title>
+  </head>
+  <body>
+    <h1> Welcome to the SMMA Computer Science website! </h1><br>
+
+    <h3>How to use the website</h3>
+    <p>Visit <a href="http://smma.pythonanywhere.com/students">smma.pythonanywhere.com/students</a> to see a list if the students.</p>
+    <p> You can click the arrow next to GET and click json to get the data in json format.</p><br>
+
+    <h3>Query the database using Python requests</h3>
+    <p>The most common operations(no idea if thats the technical term) you will perfrom on a database is <b>get</b> data from it and <b>post</b> data to it.</p>
+    <p>Below is some python code showing how to do both of these tasks:</p><br><br><br>
+    <p>import requests #this is the module which comes built into Python which we will use make get and post requests</p>
+
+
+    <p>url = "http://smma.pythonanywhere.com/students" #create a string of the url</p>
+
+    <p>response = requests.get(url) #use a get request passsing he url as an argument</p>
+    <p>response = response.json() #turn it into a json object(which will be a normal list of dictionaries in python)</p>
+
+    <p>print(response) # print the json data out toi the console</p>
+
+    <p>payload = {"name":"Some random year 7", "age":"12", "experience":"0.1"} #here we create a dictionary containing the data we would like to post to the database</p>
+    <p>response = requests.post(url, data=payload)#use a post request to post the data
+    </p>
+
+  </body>
+</html>
